@@ -3,12 +3,47 @@ const sortBy = require('lodash/sortBy')
 const groupBy = require('lodash/groupBy')
 
 const PREFIXES = [
-  'hyper', 'even', 'ever', 'co', 'true', 'active', 're', 'iso', 'meta', 'base',
-  'en', 'app', 'high', 'on'
+  'active',
+  'app',
+  'base', // basecamp
+  'co',
+  'clear',
+  'en', // envato
+  'even',
+  'ever', // note
+  'go', // gopro
+  'high', // highrise
+  'hyper',
+  'in',
+  'inter',
+  'iso',
+  'live',
+  'meta', // metalab
+  'omni', // omniture
+  'on',
+  'one', // onenote
+  'out',
+  're',
+  'real',
+  'solid',
+  'true', // truecrypt
 ]
 
 const SUFFIXES = [
-  'lab', 'dock', 'hub', 'base'
+  'base', // crunchbase
+  'dock', // flowdock
+  'er',
+  'grid', // sendgrid
+  'hub', // github
+  'kit',
+  'lab', // gitlab
+  'level',
+  'mark', // zipmark
+  'pass',
+  'sense',
+  'ture', // omniture
+  'view',
+  // 'access',
 ]
 
 /*
@@ -21,6 +56,10 @@ function namer (words) {
   list = list.map((word) => [ normalize(word), score(word) ])
   list = sortBy(list, ([ word, score ]) => -1 * score)
   list = groupBy(list, ([ word, score ]) => score)
+  list = Object.keys(list).reduce((result, key) => {
+    result[key] = list[key].map(([ word, score ]) => word)
+    return result
+  }, {})
 
   return list
 }
@@ -71,15 +110,13 @@ function permutate (words) {
  */
 
 function normalize (word) {
-  return word.replace(/ /g, '')
+  return word
+    .replace(/(.) (.)/, (_, a, b) => a === b ? a : `${a}${b}`) // live event -> livevent
+    .replace(/^./, s => s.toUpperCase())
 }
 
 /*
  * Run
  */
 
-if (!module.parent) {
-  // const result = namer(['travel', 'sky', 'fly'])
-  const result = namer(['time', 'flow'])
-  console.log('result:', require('util').inspect(result, { depth: null, colors: true }))
-}
+module.exports = namer

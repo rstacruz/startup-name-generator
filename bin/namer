@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+const namer = require('../index')
+
+const cli = require('meow')(`
+  Usage:
+    $ namer [names]
+
+  Options:
+    -h, --help       show usage information
+    -v, --version    print version info and exit
+`, {
+  boolean: ['help', 'version'],
+  alias: {
+    h: 'help', v: 'version'
+  }
+})
+
+const result = namer(cli.input)
+console.log(require('util').inspect(result, { depth: null, colors: true }))

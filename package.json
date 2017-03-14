@@ -7,5 +7,8 @@
     "lodash": "4.17.4",
     "meow": "3.7.0",
     "syllable": "2.0.0"
+  },
+  "bin": {
+    "namer": "bin/namer"
   }
 }
