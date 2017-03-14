@@ -26,6 +26,7 @@ const PREFIXES = [
   'out',
   're',
   'real',
+  'pure',
   'shift',
   'solid',
   'true', // truecrypt
@@ -42,6 +43,7 @@ const SUFFIXES = [
   'level',
   'mark', // zipmark
   'pass',
+  'push',
   'sense',
   'shift',
   'ture', // omniture
