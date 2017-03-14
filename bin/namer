@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const namer = require('../index')
+const namer = require('../lib/index')
 
 const cli = require('meow')(`
   Usage:
