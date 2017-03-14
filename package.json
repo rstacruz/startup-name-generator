@@ -6,7 +6,8 @@
   "dependencies": {
     "lodash": "4.17.4",
     "meow": "3.7.0",
-    "syllable": "2.0.0"
+    "syllable": "2.0.0",
+    "thesaurus-com": "1.1.3"
   },
   "bin": {
     "namer": "bin/namer"
