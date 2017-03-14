@@ -15,5 +15,14 @@ const cli = require('meow')(`
   }
 })
 
-const result = namer(cli.input)
-console.log(require('util').inspect(result, { depth: null, colors: true }))
+let list = namer(cli.input)
+
+// Paginate
+list = list.reduce((result, item, idx) => {
+  const group = Math.floor(idx / 9)
+  if (!result[group]) result[group] = []
+  result[group].push(item)
+  return result
+}, [])
+
+console.log(require('util').inspect(list, { depth: null, colors: true }))
