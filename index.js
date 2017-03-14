@@ -5,10 +5,12 @@ const shuffle = require('lodash/shuffle')
 
 const PREFIXES = [
   'active',
+  'auto',
   'app',
   'base', // basecamp
   'co',
   'clear',
+  'de',
   'en', // envato
   'echo', // echoplex
   'even',
@@ -25,6 +27,7 @@ const PREFIXES = [
   'omni', // omniture
   'on',
   'one', // onenote
+  'open',
   'out',
   're',
   'real',
@@ -36,22 +39,26 @@ const PREFIXES = [
 
 const SUFFIXES = [
   'base', // crunchbase
-  'dock', // flowdock
+  'bay', // ebay
+  'dock', // flowdock, stardock
   'er',
   'grid', // sendgrid
   'hub', // github
+  'ible',
+  'focus',
   'kit',
   'lab', // gitlab
   'level',
+  'loop',
   'mark', // zipmark
   'pass',
   'push',
+  'scout',
   'sense',
   'shift',
   'ture', // omniture
   'view',
-  'focus',
-  'ible',
+  'ware',
   // 'access',
 ]
 
@@ -63,13 +70,23 @@ function namer (words) {
   let list
   list = permutate(words)
   list = list.map((word) => [ normalize(word), score(word) ])
+
+  // Add some variance to the scores
+  list = list.map(([ word, score ]) => [ word, score * (0.9 + Math.random() * 0.2) ])
+
+  // Sort by score
   list = sortBy(list, ([ word, score ]) => -1 * score)
-  list = groupBy(list, ([ word, score ]) => score)
-  list = Object.keys(list).reduce((result, key) => {
-    result[key] = list[key].map(([ word, score ]) => word)
-    result[key] = shuffle(result[key])
+
+  // Reduce to just words
+  list = list.map(([ word, score ]) => word)
+
+  // Paginate
+  list = list.reduce((result, item, idx) => {
+    const group = Math.floor(idx / 9)
+    if (!result[group]) result[group] = []
+    result[group].push(item)
     return result
-  }, {})
+  }, [])
 
   return list
 }
@@ -93,6 +110,10 @@ function score (word) {
  */
 
 function permutate (words) {
+  if (words.length === 0) {
+    return emptyPermutate()
+  }
+
   let permutations = words.reduce((list, word) => {
     let prefixed = PREFIXES.reduce((list, prefix) => {
       return list.concat([ `${prefix} ${word}` ])
@@ -113,6 +134,19 @@ function permutate (words) {
   }, [])
 
   return permutations.concat(wordPerms)
+}
+
+/*
+ * I'm feeling lucky
+ */
+
+function emptyPermutate () {
+  return PREFIXES.reduce((list, prefix) => {
+    return SUFFIXES.reduce((list, suffix) => {
+      if (prefix === suffix) return list
+      return list.concat([ `${prefix} ${suffix}` ])
+    }, list)
+  }, [])
 }
 
 /*
