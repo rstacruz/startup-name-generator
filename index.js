@@ -44,7 +44,7 @@ function score (word) {
  */
 
 function permutate (words) {
-  return words.reduce((list, word) => {
+  let permutations = words.reduce((list, word) => {
     let prefixed = PREFIXES.reduce((list, prefix) => {
       return list.concat([ `${prefix} ${word}` ])
     }, [])
@@ -55,6 +55,15 @@ function permutate (words) {
 
     return list.concat(prefixed).concat(suffixed)
   }, [])
+
+  let wordPerms = words.reduce((list, word1) => {
+    return words.reduce((list, word2) => {
+      if (word1 === word2) return list
+      return list.concat([ `${word1} ${word2}` ])
+    }, [])
+  }, [])
+
+  return permutations.concat(wordPerms)
 }
 
 /*
