@@ -2,5 +2,10 @@
   "name": "namer",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "4.17.4",
+    "meow": "3.7.0",
+    "syllable": "2.0.0"
+  }
 }
