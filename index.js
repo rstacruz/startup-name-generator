@@ -10,6 +10,7 @@ const PREFIXES = [
   'co',
   'clear',
   'en', // envato
+  'echo', // echoplex
   'even',
   'ever', // note
   'go', // gopro
@@ -20,6 +21,7 @@ const PREFIXES = [
   'iso',
   'live',
   'meta', // metalab
+  'matter', // mattermost
   'omni', // omniture
   'on',
   'one', // onenote
