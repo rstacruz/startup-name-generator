@@ -1,6 +1,7 @@
 const countSyllables = require('syllable')
 const sortBy = require('lodash/sortBy')
 const groupBy = require('lodash/groupBy')
+const shuffle = require('lodash/shuffle')
 
 const PREFIXES = [
   'active',
@@ -25,6 +26,7 @@ const PREFIXES = [
   'out',
   're',
   'real',
+  'shift',
   'solid',
   'true', // truecrypt
 ]
@@ -41,8 +43,11 @@ const SUFFIXES = [
   'mark', // zipmark
   'pass',
   'sense',
+  'shift',
   'ture', // omniture
   'view',
+  'focus',
+  'ible',
   // 'access',
 ]
 
@@ -58,6 +63,7 @@ function namer (words) {
   list = groupBy(list, ([ word, score ]) => score)
   list = Object.keys(list).reduce((result, key) => {
     result[key] = list[key].map(([ word, score ]) => word)
+    result[key] = shuffle(result[key])
     return result
   }, {})
 
@@ -111,6 +117,7 @@ function permutate (words) {
 
 function normalize (word) {
   return word
+    .replace(/e i/, 'i') // time ible -> timible
     .replace(/(.) (.)/, (_, a, b) => a === b ? a : `${a}${b}`) // live event -> livevent
     .replace(/^./, s => s.toUpperCase())
 }
