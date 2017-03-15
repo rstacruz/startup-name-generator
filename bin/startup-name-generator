@@ -3,7 +3,7 @@ const namer = require('../lib/index')
 
 const cli = require('meow')(`
   Usage:
-    $ namer [names]
+    $ startup-name-generator [seed names]
 
   Options:
     -h, --help       show usage information
@@ -26,4 +26,4 @@ list = list.reduce((result, item, idx) => {
   return result
 }, [])
 
-console.log(require('util').inspect(list, { depth: null, colors: true }))
+console.log(JSON.stringify(list, null, 2))

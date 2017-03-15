@@ -11,7 +11,7 @@
     "thesaurus-com": "1.1.3"
   },
   "bin": {
-    "namer": "bin/namer"
+    "startup-name-generator": "bin/startup-name-generator"
   },
   "devDependencies": {
     "jest": "19.0.2"
