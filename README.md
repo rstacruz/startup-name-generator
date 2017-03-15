@@ -8,6 +8,8 @@ name('cloud')
 //=> ['Cloudary', 'Purecloud', 'Cloudlayer', 'Echocloud', ...]
 ```
 
+[![Status](https://travis-ci.org/rstacruz/startup-name-generator.svg?branch=master)](https://travis-ci.org/rstacruz/startup-name-generator "See test builds")
+
 ## Install
 
 ```sh
