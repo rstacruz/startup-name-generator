@@ -6,7 +6,8 @@
 const name = require('@rstacruz/startup-name-generator')
 
 name('cloud')
-//=> ['Cloudary', 'Purecloud', 'Cloudlayer', 'Echocloud', ...]
+//=> ['Cloudary', 'Purecloud', 'Cloudlayer', 'Echocloud', 'Cloudspan',
+//   'Cloudloop', 'Activecloud', 'Cloudspark', 'Cloudable', 'Clouder', ...]
 ```
 
 [![Status](https://travis-ci.org/rstacruz/startup-name-generator.svg?branch=master)](https://travis-ci.org/rstacruz/startup-name-generator "See test builds")
