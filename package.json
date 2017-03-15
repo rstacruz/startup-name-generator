@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@rstacruz/startup-name-generator": "rstacruz/startup-name-generator",
     "lodash": "4.17.4",
     "meow": "3.7.0",
     "random-seed": "0.3.0",
