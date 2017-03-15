@@ -15,6 +15,7 @@ const cli = require('meow')(`
   }
 })
 
+// let list = namer(cli.input, { seed: 123 })
 let list = namer(cli.input)
 
 // Paginate
