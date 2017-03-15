@@ -3,7 +3,7 @@
 > Let's name your silly startup
 
 ```js
-const name = require('startup-name-generator')
+const name = require('@rstacruz/startup-name-generator')
 name('cloud')
 //=> ['Cloudary', 'Purecloud', 'Cloudlayer', 'Echocloud', ...]
 ```
@@ -11,7 +11,7 @@ name('cloud')
 ## Install
 
 ```sh
-yarn add --exact rstacruz/startup-name-generator
+yarn add --exact github:rstacruz/startup-name-generator
 ```
 
 ## Thanks
