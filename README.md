@@ -15,17 +15,17 @@ name('cloud')
 ## Install
 
 ```sh
-yarn add --exact github:rstacruz/startup-name-generator
+yarn add --exact @rstacruz/startup-name-generator
 # or
-npm install --save-exact github:rstacruz/startup-name-generator
+npm install --save-exact @rstacruz/startup-name-generator
 ```
 
 Also available as a command-line app.
 
 ```sh
-yarn global add github:rstacruz/startup-name-generator
+yarn global add @rstacruz/startup-name-generator
 # or
-npm install -g github:rstacruz/startup-name-generator
+npm install -g @rstacruz/startup-name-generator
 
 startup-name-generator health fit run
 startup-name-generator --help
