@@ -2,6 +2,8 @@
 
 > Let's name your silly startup
 
+Generates cliché (but nice-sounding) names for your startup. [Try it in RunKit](https://runkit.com/rstacruz/58cbce2fa49148001474a966).
+
 ```js
 const name = require('@rstacruz/startup-name-generator')
 
@@ -19,6 +21,8 @@ yarn add --exact @rstacruz/startup-name-generator
 # or
 npm install --save-exact @rstacruz/startup-name-generator
 ```
+
+## Command line
 
 Also available as a command-line app.
 
