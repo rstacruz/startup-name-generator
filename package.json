@@ -16,6 +16,9 @@
     "syllable": "2.0.0"
   },
   "devDependencies": {
+    "babel-preset-env": "1.2.2",
+    "babelify": "7.3.0",
+    "browserify": "14.1.0",
     "jest": "19.0.2"
   },
   "homepage": "https://github.com/rstacruz/startup-name-generator#readme",
@@ -31,6 +34,13 @@
     "url": "git+https://github.com/rstacruz/startup-name-generator.git"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dist": "mkdir -p dist; browserify -t babelify -s StartupNameGenerator lib/index.js | uglifyjs -cm > dist/startup-name-generator.js",
+    "prepublish": "npm run dist"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   }
 }

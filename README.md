@@ -22,6 +22,8 @@ yarn add --exact @rstacruz/startup-name-generator
 npm install --save-exact @rstacruz/startup-name-generator
 ```
 
+Also available at: https://unpkg.com/@rstacruz/startup-name-generator@latest/dist/startup-name-generator.js (name `StartupNameGenerator`)
+
 ## Command line
 
 Also available as a command-line app.
