@@ -2,7 +2,7 @@
 
 > Let's name your silly startup
 
-Generates cliché (but nice-sounding) names for your startup. [Try it in RunKit](https://runkit.com/rstacruz/58cbce2fa49148001474a966).
+Generates cliché (but nice-sounding) names for your startup. [Try it on Codepen](http://codepen.io/rstacruz/full/wJyaJb/).
 
 ```js
 const name = require('@rstacruz/startup-name-generator')
