@@ -1,3 +1,10 @@
+## [v0.2.1]
+> Mar 20, 2017
+
+- Fix distribution package not being packaged.
+
+[v0.2.1]: https://github.com/rstacruz/startup-name-generator/compare/v0.2.0...v0.2.1
+
 ## [v0.2.0]
 > Mar 20, 2017
 

@@ -1,8 +1,13 @@
 {
   "name": "@rstacruz/startup-name-generator",
   "description": "Let's name your silly startup",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Rico Sta. Cruz <rico@ricostacruz.com> (http://ricostacruz.com)",
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
   "bin": {
     "startup-name-generator": "bin/startup-name-generator"
   },
@@ -21,6 +26,11 @@
     "browserify": "14.1.0",
     "jest": "19.0.2"
   },
+  "files": [
+    "lib",
+    "bin",
+    "dist"
+  ],
   "homepage": "https://github.com/rstacruz/startup-name-generator#readme",
   "keywords": [
     "generator",
@@ -34,13 +44,8 @@
     "url": "git+https://github.com/rstacruz/startup-name-generator.git"
   },
   "scripts": {
-    "test": "jest",
-    "dist": "mkdir -p dist; browserify -t babelify -s StartupNameGenerator lib/index.js | uglifyjs -cm > dist/startup-name-generator.js",
-    "prepublish": "npm run dist"
-  },
-  "babel": {
-    "presets": [
-      "env"
-    ]
+    "dist": "mkdir -p dist; browserify -t babelify -s StartupNameGenerator lib/index.js | uglifyjs -m -c warnings=false > dist/startup-name-generator.js",
+    "prepublish": "npm run dist",
+    "test": "jest"
   }
 }
