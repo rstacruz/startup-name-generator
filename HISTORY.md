@@ -1,3 +1,10 @@
+## [v0.3.0]
+> Mar 24, 2017
+
+- More names.
+
+[v0.3.0]: https://github.com/rstacruz/startup-name-generator/compare/v0.2.1...v0.3.0
+
 ## [v0.2.1]
 > Mar 20, 2017
 
